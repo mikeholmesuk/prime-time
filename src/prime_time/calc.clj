@@ -1,7 +1,7 @@
 (ns prime-time.calc)
 
 (defn sieve [s]
-  "Shamelessly lifted from the lazy-seq clojure page ()
+  "Shamelessly lifted from the lazy-seq clojure page (https://clojuredocs.org/clojure.core/lazy-seq)
   and used to filter out prime numbers from a provided list"
   (cons (first s)
         (lazy-seq (sieve (filter #(not= 0 (mod % (first s))) (rest s))))))
